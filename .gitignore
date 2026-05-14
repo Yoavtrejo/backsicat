@@ -1,0 +1,13 @@
+.env
+.env
+.env.local
+.env.development
+.env.test
+
+urls.py
+
+settings.py
+.env
+.env.*
+! .env.example**/.env
+.env

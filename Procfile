@@ -1,0 +1,1 @@
+web: python manage.py migrate && python manage.py collectstatic --noinput && waitress-serve --port=$PORT backurban.wsgi:application

@@ -7,10 +7,6 @@ import requests
 MAX_VALUE_CHARS = 2000
 MAX_PROMPT_CHARS = 24000
 
-# DeepSeek (API compatible con OpenAI): https://api.deepseek.com/v1/chat/completions
-# Modelos típicos: deepseek-chat, deepseek-reasoner
-
-
 def _resolve_llm_config() -> tuple[str, str, str]:
     """
     Devuelve (api_key, base_url, model).

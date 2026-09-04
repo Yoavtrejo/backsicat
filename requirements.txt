@@ -21,3 +21,4 @@ tzdata==2026.1
 urllib3==2.6.3
 waitress==3.0.2
 whitenoise==6.8.2
+gunicorn==23.0.0

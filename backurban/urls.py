@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from users.views import UserProfileView, PasswordResetRequestView, PasswordResetConfirmView, UserViewSet
 from upload_fields.views import SubirCapaNormalizadaView
 from projects.views import ProyectoViewSet
@@ -23,4 +24,7 @@ urlpatterns = [
     path('api/subir-capa/<int:pk>/', SubirCapaNormalizadaView.as_view(), name='subir-capa-detail'),
     path('api/ai/capa/explicar-elemento/', ExplicarElementoView.as_view(), name='ai-explicar-elemento'),
     path('api/ai/informes/generar/', GenerarInformeView.as_view(), name='ai-generar-informe'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
